@@ -7,8 +7,8 @@ function getUsers() {
     .catch(error => console.log(error))
 }
 
-function getUser() {
-  fetch(`${url}/1`)
+function getUser(id) {
+  fetch(`${url}/${id}`)
     .then(response => response.json())
     .then(data => {
       userName.textContent = data.name
@@ -18,13 +18,62 @@ function getUser() {
     .catch(error => console.log(error))
 }
 
-function addUser() {}
+function addUser(newUser) {
+  fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(newUser),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8'
+    }
+  })
+    .then(response => response.json())
+    .then(data => (alertApi.textContent = data))
+    .catch(error => console.error(error))
+}
+
+function updateUser(updatedUser, id) {
+  fetch(`${url}/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(updatedUser),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8'
+    }
+  })
+    .then(response => response.json())
+    .then(data => (alertApi.textContent = data))
+    .catch(error => console.error(error))
+}
+
+function deleteUser(id) {
+  fetch(`${url}/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json: charset=UTF-8'
+    }
+  })
+    .then(response => response.json())
+    .then(data => (alertApi.textContent = data))
+    .catch(error => console.error(error))
+}
 
 const newUser = {
   name: 'Isaias Tortorele',
-  avatar: 'https://github.com/Isaias-Tortorele',
+  avatar: 'https://avatars.githubusercontent.com/u/57502977?v=4',
   city: 'São Paulo'
 }
 
+const updatedUser = {
+  name: 'Isaias Tortorele dos Santos',
+  avatar: 'https://avatars.githubusercontent.com/u/57502977?v=4',
+  city: 'São Paulo - SP'
+}
+
+// addUser(newUser)
+
+// updateUser(updatedUser, 2)
+
+deleteUser(0)
+
 getUsers()
-getUser()
+getUser(8)
+// exibindo user
