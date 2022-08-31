@@ -69,10 +69,9 @@ const updatedUser = {
 }
 
 // addUser(newUser)
-
 // updateUser(updatedUser, 2)
 
-deleteUser(0)
+deleteUser(/* 0 */)
 
 getUsers()
 getUser(8)
