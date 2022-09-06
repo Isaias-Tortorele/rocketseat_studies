@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 import './styles/global.css'
 
-import Home from './pages/Home'
+import { Home } from './pages/Home'
 
 ReactDOM.render(
   <React.StrictMode>
