@@ -22,7 +22,14 @@ export function Home() {
 
   return (
     <div className='container'>
-      <h1 >Lista de presença</h1>
+      <header>
+        <h1 >Lista de presença</h1>
+        <div>
+          <strong>Isaias</strong>
+          <img src="https://github.com/isaias-tortorele.png" alt="Foto de perfil" />
+        </div>
+      </header>
+
       <input
         type="text"
         placeholder="Digite seu nome..."
