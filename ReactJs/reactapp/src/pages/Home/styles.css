@@ -8,7 +8,7 @@
   width: 50%;
   margin: 84px 0 24px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
