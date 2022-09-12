@@ -23,18 +23,27 @@ export function Home() {
 
   useEffect(() => {
     async function fetchData() {
-      await fetch('https://api.github.com/users/Isaias-Tortorele')
-        .then(response => response.json())
-        .then(data => {
-          setUser({
-            name: data.name,
-            avatar: data.avatar_url,
-          })
-        })
+      const response = await fetch('https://api.github.com/users/Isaias-Tortorele')
+      const data = await response.json()
+      setUser({
+        name: data.name,
+        avatar: data.avatar_url,
+      })
     }
 
-    fetchData()
+    fetchData();
 
+    // async function fetchData() {
+    //   await fetch('https://api.github.com/users/Isaias-Tortorele')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //       setUser({
+    //         name: data.name,
+    //         avatar: data.avatar_url,
+    //       })
+    //     })
+    // }
+    // fetchData()
   }, [])
 
   return (
