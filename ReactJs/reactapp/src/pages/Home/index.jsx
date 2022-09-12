@@ -22,14 +22,19 @@ export function Home() {
   }
 
   useEffect(() => {
-    fetch('https://api.github.com/users/Isaias-Tortorele')
-      .then(response => response.json())
-      .then(data => {
-        setUser({
-          name: data.name,
-          avatar: data.avatar_url,
+    async function fetchData() {
+      await fetch('https://api.github.com/users/Isaias-Tortorele')
+        .then(response => response.json())
+        .then(data => {
+          setUser({
+            name: data.name,
+            avatar: data.avatar_url,
+          })
         })
-      })
+    }
+
+    fetchData()
+
   }, [])
 
   return (
