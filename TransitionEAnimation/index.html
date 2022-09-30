@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transition e Animation</title>
+    <style>
+      /* body {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+      }
+      .box-red {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+      }
+      .box-red {
+        background-color: #f00;
+        transition-property: all;
+        transition-duration: 1s;
+      }
+      .box-red:hover {
+        background-color: #ff0;
+        transition-property: background-color widht;
+        transition-duration: 1s;
+        width: 150px;
+      } */
+
+      /* .line {
+        width: 100%;
+        background-color: blue;
+        height: 25px;
+        margin-bottom: 10px;
+
+        transition: width;
+        transition-duration: 1s;
+      }
+      body:hover .line {
+        width: 20px;
+        background-color: rgb(255, 0, 234);
+      }
+      .ease {
+        transition-timing-function: ease;
+      }
+      .linear {
+        transition-timing-function: linear;
+      }
+      .ease-in {
+        transition-timing-function: ease-in;
+      }
+      .ease-out {
+        transition-timing-function: ease-out;
+      }
+      .ease-in-out {
+        transition-timing-function: ease-in-out;
+      }
+      .cube {
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      } */
+
+      body {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+      }
+      .box-red,
+      .box-green,
+      .box-blue,
+      .box-yellow {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+      }
+
+      .box-red {
+        background-color: red;
+        transition: background-color 1s ease-in 2s;
+      }
+
+      .box-red:hover {
+        background-color: yellow;
+        transition-property: background-color;
+        transition-duration: 1s;
+        transition-timing-function: ease-in;
+        transition-delay: 2s;
+      }
+
+      .box-green {
+        background-color: green;
+        transition: all 1s linear 1s;
+      }
+      .box-green:hover {
+        transition: all 1s cubic-bezier(0.29, 1.01, 1, -0.68);
+        background-color: rgb(255, 0, 208);
+        width: 300px;
+        height: 300px;
+        border-radius: 8px;
+      }
+
+      .box-blue {
+        background-color: blue;
+        transition: width 1s linear 1s;
+      }
+      .box-blue:hover {
+        transition: width 2s ease-in-out 0s;
+        width: 200px;
+      }
+      .box-yellow {
+        background-color: yellow;
+        transition: opacity 2s linear 1s;
+      }
+      .box-yellow:hover {
+        opacity: 0;
+        transition: opacity 1s linear 0s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box-red"></div>
+    <div class="box-green"></div>
+    <div class="box-blue"></div>
+    <div class="box-yellow"></div>
+  </body>
+</html>
